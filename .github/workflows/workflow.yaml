@@ -1,19 +1,21 @@
-name: Continuos Integration
+name: Continuous Integration  # Nome do workflow
 
-on: pull_request
+on: pull_request  # Define que o workflow será executado em eventos de pull request
 
-jobs:
-  continuos-integration:
-    runs-on: ubuntu-latest
+jobs:  # Define os jobs (tarefas) que compõem o workflow
+  continuous-integration:  # Nome do job de integração contínua
+    runs-on: ubuntu-latest  # Especifica que o job será executado em uma máquina virtual com o Ubuntu mais recente
 
-    steps:
-      - uses: actions/checkout@v3
-      - name: Using Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: 16.
-      - name: run install, build and test
-        run: |
-          npm install
-          npm run build 
-          npm run test
+    steps:  # Lista de passos que compõem o job
+      - uses: actions/checkout@v3  # Faz o checkout do código do repositório (versão 3 do actions checkout)
+      - name: Using Node.js  # Nomeia o próximo passo do job
+        uses: actions/setup-node@v2  # Configura o ambiente Node.js usando a ação setup-node versão 2
+        with:  # Especifica os parâmetros para a ação setup-node
+          node-version: 16  # Define a versão do Node.js a ser usada (versão 16)
+
+      - name: run install, build and test  # Nomeia o próximo passo do job
+        run: | 
+          npm install  
+          npm run build  
+          npm run test 
+          
