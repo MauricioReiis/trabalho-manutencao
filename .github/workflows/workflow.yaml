@@ -19,3 +19,4 @@ jobs:  # Define os jobs (tarefas) que compõem o workflow
           npm run build  
           npm run test 
           
+          
